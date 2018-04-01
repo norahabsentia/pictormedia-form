@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script-->
+<!--script src="js/scripts.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script-->
+<body style="width:50%; margin:0 auto">
+
+<h2>HDFC Form</h2>
+
+<form action="/action_page.php">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter Name">
+  </div>
+  
+  <div class="form-group">
+    <label for="month">Month</label>
+    <input type="text" class="form-control" id="month" placeholder="Enter Month">
+  </div>
+  
+  <div class="form-group" style="display:none">
+    <label for="total_charges">Total Charges</label>
+    <input type="text" class="form-control" id="total_charges" placeholder="Enter Total Charges">
+  </div>
+  
+  <div class="form-group">
+    <label for="recent_pmt_amt">Recent PMT Amount</label>
+    <input type="text" class="form-control" id="recent_pmt_amt" placeholder="Enter Recent PMT Amount">
+  </div>
+  
+  <div class="form-group">
+    <label for="recent_pmt_date">Recent PMT Date</label>
+    <input type="text" class="form-control" id="recent_pmt_date" placeholder="Enter Recent PMT Date">
+  </div>
+  
+  <div class="form-group">
+    <label for="overall_balance">Overall Balance</label>
+    <input type="text" class="form-control" id="overall_balance" placeholder="Enter Overall Balance">
+  </div>
+  
+  <div class="form-group">
+    <label for="min_payment">Minimum Payment</label>
+    <input type="text" class="form-control" id="min_payment" placeholder="Enter Minimum Payment">
+  </div>
+  
+  <div class="form-group">
+    <label for="due_date">Due Date</label>
+    <input type="text" class="form-control" id="due_date" placeholder="Enter Due Date">
+  </div>
+  
+  <div class="form-group">
+    <label for="points_earned_month">Points Earned Month</label>
+    <input type="text" class="form-control" id="points_earned_month" placeholder="Enter Points Eanred Month">
+  </div>
+  
+  <div class="form-group">
+    <label for="total_points_earned">Total Points Earned</label>
+    <input type="text" class="form-control" id="total_points_earned" placeholder="Enter Total Points Earned">
+  </div>
+  
+  <div class="form-group" style="display:none">
+    <!--label for="exampleInputEmail1">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter Name"-->
+    <label >Expense Distribution</label>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="food">Food</label>
+        <input type="text" class="form-control" id="food" placeholder="Enter Food">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="entertainment">Entertainment</label>
+        <input type="text" class="form-control" id="entertainment" placeholder="Enter Entertainment">
+      </div>
+   </div>
+   <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="automobile">Automobile</label>
+        <input type="text" class="form-control" id="automobile" placeholder="Enter Automobile">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="helathcare">Healthcare</label>
+        <input type="text" class="form-control" id="healthcare" placeholder="Enter Healthcare">
+      </div>
+   </div>
+   <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="merchandise">Merchandise</label>
+        <input type="text" class="form-control" id="merchandise" placeholder="Enter Merchandise">
+      </div>
+   </div>
+  </div>
+
+
+  <a target="_blank" href="#" id="videolink" ></a>
+  <br>
+  <br>
+  <button type="button" class="btn btn-primary" id="submit">Submit </button>
+  <button type="button" class="btn btn-success" id="random"> Random </button>
+</form> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
