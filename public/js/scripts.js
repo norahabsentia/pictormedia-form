@@ -70,7 +70,7 @@ $(document).ready(function() {
       $.post("/client",{client:client},function(data, status){
         //alert("Data: " + data + "\nStatus: " + status);
         $("#videolink").text(data);
-        $("#videolink").attr("href","http://pictorpv.com:8080/?id="+data);
+        $("#videolink").attr("href","http://35.200.136.182:8080/?id="+data);
         jQuery("#videolink")[0].click();//.trigger( "click" );
         
       });      

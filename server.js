@@ -1,22 +1,22 @@
 'use strict';
 const express = require('express'),
     app = express(),
-    port = process.env.PORT || 443,
+    port = process.env.PORT || 8081,
     bodyParser = require('body-parser'),
     db = require('./config/database');
 var path = require('path');
 
-const https = require('https');
-//const http = require('http');
+//const https = require('https');
+const http = require('http');
 const fs = require('fs');
 
-const options = {
-  key: fs.readFileSync('/etc/letsencrypt/live/pictorpv.com/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/pictorpv.com/fullchain.pem')
-};
+//const options = {
+  //key: fs.readFileSync('/etc/letsencrypt/live/pictorpv.com/privkey.pem'),
+//  cert: fs.readFileSync('/etc/letsencrypt/live/pictorpv.com/fullchain.pem')
+//};
 
-var httpsServer = https.createServer(options, app);
-//var httpServer = http.createServer( app);
+//var httpsServer = https.createServer(options, app);
+var httpServer = http.createServer( app);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -110,6 +110,6 @@ app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
 });
 
-httpsServer.listen(port);
+httpServer.listen(8081);
 
 console.log('API server started on: ' + port);
