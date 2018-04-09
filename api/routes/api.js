@@ -1,8 +1,54 @@
 'use strict';
 
-module.exports = function(app) {
+module.exports = function(app,twilioclient,mailgun) {
 var Client       = require('./models/client');
 
+
+   app.post('/sendSms', function(req, res) {
+
+     var from_number = req.body.from_number; 
+     var to_number = req.body.to_number; 
+     var message = req.body.message;
+     console.log(from_number);
+     console.log(to_number);
+     console.log(message); 
+     twilioclient.messages.create({
+       from: from_number,
+       to: to_number,
+       body: message
+     },
+     (err, message) => {
+     // console.log(message.sid);
+      res.status(200).send("");
+    });  
+
+
+   });
+
+   app.post('/sendEmail', function(req, res) {
+
+
+     var from = req.body.from;
+     var to = req.body.to;
+     var subject = req.body.subject;
+     var text = req.body.text;
+     console.log(from);
+     console.log(to);
+     console.log(subject);
+     console.log(text);
+     var data = {
+       from: from,
+       to: to,
+       subject: subject,
+       text: text
+     };
+ 
+     mailgun.messages().send(data, function (error, body) {
+        console.log(body);
+        res.status(200).send("");
+     });
+
+   });
 
    app.get('/client/:clientId', function(req, res) {
         var clientid = req.params.clientId;

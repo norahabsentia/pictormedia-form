@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+const accountSid = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+const authToken = 'your_auth_token';
+
+
     $("#random").click(function() {
       //$("#demo").html("Hello, World!");
       console.log("aa");
@@ -33,6 +38,52 @@ $(document).ready(function() {
       });
     });
     
+    $("#sendEmail").click(function() {
+  
+      var text = $("#videolink").text();
+      var link = $("#videolink").attr("href");
+      if(text){
+  
+        console.log("11");
+        $.post("/sendEmail",{"from":"<contact@mail.pictorpvs.com>","to":$('#email').val(),"subject":"Hello your PV is here","text":"Check your Personalised Video "+link},function(data, status){
+
+           alert("Sent");
+
+        });
+     
+      }
+
+    });
+
+
+    $("#sendSMS").click(function() {
+
+   
+      var text = $("#videolink").text();
+      var link = $("#videolink").attr("href");
+      if(text){
+
+        console.log("11");
+
+        /*$.post("https://api.twilio.com/2010-04-01/Accounts/ACefc93f82c6e3de2acc2220a081578fc2/Messages.json",{client:client},function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+        $("#videolink").text(data);
+        $("#videolink").attr("href","http://35.200.136.182:8080/?id="+data);
+        jQuery("#videolink")[0].click();//.trigger( "click" );
+
+      });*/
+        $.post("/sendSms",{"from_number":"+14233800174","to_number":"+91"+$('#number').val(),"message":link},function(data, status){
+
+           alert("Sent");
+
+        });
+
+
+      }
+
+
+    });
+
     $("#submit").click(function() {
 
       console.log("11");

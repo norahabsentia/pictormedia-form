@@ -5,11 +5,21 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     db = require('./config/database');
 var path = require('path');
+const accountSid = 'ACefc93f82c6e3de2acc2220a081578fc2';
+const authToken = 'e0c64be56d5f83da38cfdcf109cbc4b5';
+
+var api_key = 'key-01981a72e91d6e717856b33af1bb9584';
+var domain = 'mail.pictorpvs.com';
+
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 //const https = require('https');
 const http = require('http');
 const fs = require('fs');
-
+var client = require('twilio')(
+  accountSid,
+  authToken
+);
 //const options = {
   //key: fs.readFileSync('/etc/letsencrypt/live/pictorpv.com/privkey.pem'),
 //  cert: fs.readFileSync('/etc/letsencrypt/live/pictorpv.com/fullchain.pem')
@@ -29,7 +39,7 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 
 const routes = require('./api/routes/api'); //importing route
-routes(app); //register the route
+routes(app,client,mailgun); //register the route
 
 app.get('/',function (request, response) {
 response.writeHead(302, {
